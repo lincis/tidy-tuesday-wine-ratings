@@ -1,7 +1,12 @@
+library(dplyr)
+library(tidyr)
+
 wine.ratings <- readr::read_csv(
   "https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-05-28/winemag-data-130k-v2.csv"
 ) %>%
   rename(ID = X1)
+
+saveRDS(wine.ratings, "wine.ratings.rds")
 
 wine.ratings %>%
   # head(10) %>%
