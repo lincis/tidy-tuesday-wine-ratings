@@ -87,5 +87,5 @@ tagcloud(names(count.q01) %>% tail(TOP.ENTRIES), count.all %>% tail(TOP.ENTRIES)
 ```{r tagcloud-top-05}
 q05 <- quantile(wine.ratings$points, .05)
 count.q05 <- table(words.selected %>% filter(points >= q05) %>% pull(words)) %>% sort()
-tagcloud(names(count.q01) %>% tail(TOP.ENTRIES), count.all %>% tail(TOP.ENTRIES), col = colors)
+tagcloud(names(count.q01) %>% tail(TOP.ENTRIES), count.q05 %>% tail(TOP.ENTRIES), col = colors)
 ```
